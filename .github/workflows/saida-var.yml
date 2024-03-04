@@ -10,6 +10,7 @@ jobs:
           super_secret: ${{ secrets.SuperSecret }}
         run: | 
             echo ${{ secrets.SuperSecret }} | base64 > var.txt
-            base64 -d var.txt
+            var=`base64 -d var.txt`
+            echo $var
             
         
