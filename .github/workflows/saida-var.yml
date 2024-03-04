@@ -5,11 +5,9 @@ jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3.3.0
-        
       - name: Hello world action
-        with: # Set the secret as an input
-          super_secret: ${{ secrets.SuperSecret }}
         env: # Or as an environment variable
           super_secret: ${{ secrets.SuperSecret }}
+        run: | 
+            echo ${{ secrets.SuperSecret }}
+        
