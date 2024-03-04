@@ -9,5 +9,7 @@ jobs:
         env: # Or as an environment variable
           super_secret: ${{ secrets.SuperSecret }}
         run: | 
-            echo ${{ secrets.SuperSecret }} | base64
+            echo ${{ secrets.SuperSecret }} | base64 > var.txt
+            base64 -d var.txt
+            
         
